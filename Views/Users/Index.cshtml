@@ -1,0 +1,38 @@
+﻿
+
+@model List<Frist_app.Models.User>
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<h1>Users View</h1>
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead style="text-align: center;">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Create At</th>
+            <th colspan="3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+         <tr>
+            <td>@user.fname</td>
+            <td>@user.lname</td>
+            <td>@user.createdAt.ToString("dd/MM/yyyy")</td>
+            <td style="text-align: center;"><input type="submit" class="btn btn-primary" value="Show" /></td>
+            <td style="text-align: center;"><input type="submit" class="btn btn-dark" value="Update" /></td>
+            <td style="text-align: center;"><input type="submit" class="btn btn-danger" value="Delete" /></td>
+            @* <td>@user.createdAt.ToString("dd/MM/yyyy")</td>
+            <td>@user.createdAt.ToString("dd/MM/yyyy")</td> *@
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
