@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Frist app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afadc695b4f0b5994efe1c26ac708893daae9235")]
 [assembly: System.Reflection.AssemblyProductAttribute("Frist app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Frist app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

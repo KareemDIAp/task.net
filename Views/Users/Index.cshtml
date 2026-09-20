@@ -1,38 +1,172 @@
 ﻿
 
+
 @model List<Frist_app.Models.User>
+
 @{
     ViewData["Title"] = "Admin Page";
 }
 
-<h1>Users View</h1>
+<div class="container mt-5">
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1 class="fw-bold mb-1">Users View</h1>
+            <p class="text-muted mb-0">
+                Manage all users
+            </p>
+        </div>
+
+        <!-- Add User -->
+        <a class="btn btn-success px-3 py-2"
+           asp-area=""
+           asp-controller="Users"
+           asp-action="Create">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="28"
+                 height="28"
+                 fill="currentColor"
+                 class="bi bi-plus-square"
+                 viewBox="0 0 16 16">
+
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+
+            </svg>
+
+        </a>
+
+    </div>
 
 
-<table class="table table-bordered table-striped" style="width:100%">
-    <thead style="text-align: center;">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Create At</th>
-            <th colspan="3">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
-         <tr>
-            <td>@user.fname</td>
-            <td>@user.lname</td>
-            <td>@user.createdAt.ToString("dd/MM/yyyy")</td>
-            <td style="text-align: center;"><input type="submit" class="btn btn-primary" value="Show" /></td>
-            <td style="text-align: center;"><input type="submit" class="btn btn-dark" value="Update" /></td>
-            <td style="text-align: center;"><input type="submit" class="btn btn-danger" value="Delete" /></td>
-            @* <td>@user.createdAt.ToString("dd/MM/yyyy")</td>
-            <td>@user.createdAt.ToString("dd/MM/yyyy")</td> *@
-        </tr>
-        }
+    <!-- Users Card -->
+    <div class="card shadow-sm border-0 rounded-3">
 
-    </tbody>
+        <div class="card-header bg-dark text-white py-3">
 
-</table>
+            <h5 class="mb-0 text-center">
+                Users List
+            </h5>
 
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead class="table-light text-center">
+
+                        <tr>
+
+                            <th class="py-3">
+                                First Name
+                            </th>
+
+                            <th class="py-3">
+                                Last Name
+                            </th>
+
+                            <th class="py-3">
+                                Create At
+                            </th>
+
+                            <th class="py-3" colspan="2">
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+
+                                <td class="text-center fw-semibold">
+                                    @user.fname
+                                </td>
+
+                                <td class="text-center">
+                                    @user.lname
+                                </td>
+
+                                <td class="text-center">
+
+                                    <span class="badge bg-light text-dark border">
+                                        @user.createdAt.ToString("dd/MM/yyyy")
+                                    </span>
+
+                                </td>
+
+                                <!-- Edit -->
+                                <td class="text-center">
+
+                                    <a class="btn btn-dark btn-sm px-3"
+                                    asp-route-SSN = "@user.SSN"
+                                             asp-controller="Users"
+                                             asp-action="Edit">
+           
+
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="20"
+                                             height="20"
+                                             fill="currentColor"
+                                             class="bi bi-pencil-square"
+                                             viewBox="0 0 16 16">
+
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+
+                                            <path fill-rule="evenodd"
+                                                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+
+                                        </svg>
+
+                                    </a>
+
+                                </td>
+
+
+                                <!-- Delete -->
+                                <td class="text-center">
+
+                                    <a class="btn btn-danger btn-sm px-3"
+                                             asp-route-SSN = "@user.SSN"
+                                             asp-controller="Users"
+                                             asp-action="Delete">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="20"
+                                             height="20"
+                                             fill="currentColor"
+                                             class="bi bi-archive-fill"
+                                             viewBox="0 0 16 16">
+
+                                            <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z" />
+
+                                        </svg>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

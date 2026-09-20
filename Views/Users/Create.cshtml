@@ -1,0 +1,92 @@
+
+@model Frist_app.Models.User
+
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 col-lg-5">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">Create New User</h3>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form asp-action="Create" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <!-- First Name -->
+                        <div class="mb-3">
+
+                            <label asp-for="fname"
+                                   class="form-label fw-bold">
+                                First Name
+                            </label>
+
+                            <input asp-for="fname"
+                                   class="form-control"
+                                   placeholder="Enter first name" />
+
+                            <span asp-validation-for="fname"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="mb-3">
+
+                            <label asp-for="lname"
+                                   class="form-label fw-bold">
+                                Last Name
+                            </label>
+
+                            <input asp-for="lname"
+                                   class="form-control"
+                                   placeholder="Enter last name" />
+
+                            <span asp-validation-for="lname"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+
+                            <a asp-action="Index"
+                               class="btn btn-secondary">
+                                Back
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary px-4">
+                                Create User
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -543,3 +543,4 @@ E:\C#\Frist app\Frist app\bin\Debug\net10.0\runtimes\win-arm64\native\msalruntim
 E:\C#\Frist app\Frist app\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 E:\C#\Frist app\Frist app\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 E:\C#\Frist app\Frist app\obj\Debug\net10.0\compressed\o97gh046ab-{0}-gdrbmcxyi5-gdrbmcxyi5.gz
+E:\C#\Frist app\Frist app\obj\Debug\net10.0\Frist app.sourcelink.json
